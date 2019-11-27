@@ -1,9 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Book from "./Book";
 
 
-
-class BooksList extends Component{
+class BooksList extends Component {
     state = {
         book: [
             {
@@ -46,25 +45,36 @@ class BooksList extends Component{
                 price: 150,
                 title: "Wiedzmin"
             }
-
-        ]
-
+        ],
+        book2: []
 
     };
 
+    constructor() {
+        super();
+        this.fetchBookData();
+    }
 
+    fetchBookData() {
+        fetch('api/books')
+            .then(response => { return response.json(); })
+            .then(responseData => {
+                console.log(responseData);
+                return responseData;
+            })
+            .then(data => { this.setState({ "book2": data }); });
+
+    }
 
     render() {
 
         return(
-           this.state.book.map(book =>
-           <Book
-               book = {book}
-
-               />
-
-           )
-        )
+            this.state.book.map(book =>
+                <Book
+                    book={book}/>
+            )
+        );
     }
 }
+
 export default BooksList;
