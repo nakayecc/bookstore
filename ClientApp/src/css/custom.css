@@ -16,3 +16,19 @@ code {
 body{
   background-image: url("../img/bg.jpg");
 }
+.bookBox {
+  padding: 5%;
+  background-color: rgba(255,255,255,0.4);
+  width: 80%;
+}
+.bookBox p{
+  margin-top: 5%;
+  font-weight: bold;
+}
+.imgBook img{
+  height: 150px;
+  cursor: zoom-in;
+}
+.imgBook img:hover{
+  opacity: 0.8;
+}
