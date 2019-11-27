@@ -4,9 +4,18 @@ import React, {Component} from "react";
 
 class Book extends Component{
     render() {
-        //todo obrazek jako background
-        const obrazek = require(`../img/${this.props.book.id}.jpg`);
+
+        let obrazek;
+
+        try {
+            obrazek = require(`../img/${this.props.book.id}.jpg`);
+        } catch (e) {
+            obrazek = require("../img/defaultBookImage.png");
+        } 
+        
+
         // style = { {backgroundImage: "url("+obrazek+")" }}
+
 
         return(
             <div className="col-lg-3 mt-3">
@@ -15,8 +24,8 @@ class Book extends Component{
                         <img src={obrazek}/>
                     </div>
                     <div className="text-center">
-                        <p>{this.props.book.title}</p>
-                        <p className="mb-0">{this.props.book.price}</p>
+                        <p>{this.props.book.name}</p>
+                        <p className="mb-0">{this.props.book.price} $</p>
                     </div>
                 </div>
 

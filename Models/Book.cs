@@ -16,5 +16,7 @@ namespace Bookstore.Models
             [ForeignKey("AuthorId")]
             public virtual Author Author { get; set; }
 
+            public float price { get; set; }
+
         }
     }

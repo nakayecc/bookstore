@@ -4,50 +4,7 @@ import Book from "./Book";
 
 class BooksList extends Component {
     state = {
-        book: [
-            {
-                id: 1,
-                price: 350,
-                title: "Wladca Pierscieni"
-            },
-            {
-                id: 2,
-                price: 450,
-                title: "Harry potter"
-            },
-            {
-                id: 3,
-                price: 150,
-                title: "Wiedzmin"
-            },
-            {
-                id: 4,
-                price: 150,
-                title: "Wiedzmin"
-            },
-            {
-                id: 3,
-                price: 150,
-                title: "Wiedzmin"
-            },
-            {
-                id: 3,
-                price: 150,
-                title: "Wiedzmin"
-            },
-            {
-                id: 3,
-                price: 150,
-                title: "Wiedzmin"
-            },
-            {
-                id: 3,
-                price: 150,
-                title: "Wiedzmin"
-            }
-        ],
-        book2: []
-
+        bookList: []
     };
 
     constructor() {
@@ -56,20 +13,16 @@ class BooksList extends Component {
     }
 
     fetchBookData() {
-        fetch('api/books')
-            .then(response => { return response.json(); })
-            .then(responseData => {
-                console.log(responseData);
-                return responseData;
-            })
-            .then(data => { this.setState({ "book2": data }); });
+        fetch("api/books")
+            .then(response => { return response.json() })
+            .then(data => { this.setState({ "bookList": data }); });
 
     }
 
     render() {
 
         return(
-            this.state.book.map(book =>
+            this.state.bookList.map(book =>
                 <Book
                     book={book}/>
             )
