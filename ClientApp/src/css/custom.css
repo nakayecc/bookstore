@@ -37,3 +37,17 @@ body{
   background-color: rgba(0,0,0,0.4);
   border: white 2px dashed;
 }
+.adminHome{
+  color: floralwhite;
+  border: white 2px dashed;
+  background-color: rgba(0,0,0,0.4);
+}
+.deleteBooks{
+  margin-top: 10%;
+  color: floralwhite;
+  border: white 2px dashed;
+  background-color: rgba(0,0,0,0.4);
+}
+.table {
+  color: floralwhite;
+}
