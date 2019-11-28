@@ -32,3 +32,8 @@ body{
 .imgBook img:hover{
   opacity: 0.8;
 }
+.addNewBook{
+  color: floralwhite;
+  background-color: rgba(0,0,0,0.4);
+  border: white 2px dashed;
+}

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import {Layout} from "./Layout";
+import {Route} from "react-router";
+import {Counter} from "../UserPage/Counter";
+import AddNewBook from "./AddNewBook";
 
 
 export class AdminPage extends Component {
     render () {
         return (
-            <div>
-                <Container>
-                    {this.props.children}
-                </Container>
-            </div>
+            <Layout>
+                <Route exact path='/admin' component={AdminPage} />
+                <Route path='/admin/add' component={AddNewBook} />
+                <Route path='/admin/delete' component={Counter} />
+            </Layout>
         );
     }
 }
