@@ -51,3 +51,25 @@ body{
 .table {
   color: floralwhite;
 }
+.loginBox{
+  width: 25%;
+  margin-top: 25%;
+  color: floralwhite;
+  border: white 2px dashed;
+  background-color: rgba(0,0,0,0.4);
+}
+.loginBox input{
+  width: 80%;
+  background-color: rgba(255,255,255,0.4);
+  color: black;
+}
+.loginBox input:focus{
+  width: 80%;
+  background-color: rgba(255,255,255,0.1);
+  color: floralwhite;
+}
+
+.btn-primary:hover{
+  background-color: rgba(27,110,194,0.5);
+  width: 30%;
+}
