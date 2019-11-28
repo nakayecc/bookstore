@@ -1,28 +1,36 @@
 import React, {Component} from "react";
 
 class AddNewBook extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isbn: "",
-            title: "",
-            date: "",
-            author: "",
-            price: ""
-        };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    state = {
+        isbn: "",
+        title: "",
+        date: "",
+        author: "",
+        price: ""
+    };
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
 
-    handleSubmit(event) {
+    handleChangeIsbn = (event) => {
+        this.setState({isbn: event.target.value});
+    };
+    handleChangeTitle = (event) => {
+        this.setState({title: event.target.value});
+    };
+    handleChangeDate = (event) => {
+        this.setState({date: event.target.value});
+    };
+    handleChangeAuthor = (event) => {
+        this.setState({author: event.target.value});
+    };
+    handleChangePrice = (event) => {
+        this.setState({price: event.target.value});
+    };
+
+    handleSubmit = (event) => {
         alert('Podano następujące imię: ' + this.state.value);
         event.preventDefault();
-    }
+    };
 
 
     render() {
@@ -31,11 +39,11 @@ class AddNewBook extends Component {
                 <div className="row text-center mt-5 addNewBook">
                     <div className="col-lg-6 mt-3 p-2">
                         <p> ISBN:</p>
-                        <input type="number" value={this.state.isbn} onChange={this.handleChange}/>
+                        <input type="number" value={this.state.isbn} onChange={this.handleChangeIsbn}/>
                         <p>Title:</p>
-                        <input type="text" value={this.state.title} onChange={this.handleChange}/>
+                        <input type="text" value={this.state.title} onChange={this.handleChangeTitle}/>
                         <p>Relase Date:</p>
-                        <input type="date" value={this.state.date} onChange={this.handleChange}/>
+                        <input type="date" value={this.state.date} onChange={this.handleChangeDate}/>
                         <p>Author:</p>
                         <select>
                             <option value="volvo">Volvo</option>
@@ -44,7 +52,7 @@ class AddNewBook extends Component {
                             <option value="audi">Audi</option>
                         </select>
                         <p>Price:</p>
-                        <input type="number" value={this.state.price} onChange={this.handleChange}/>
+                        <input type="number" value={this.state.price} onChange={this.handleChangePrice}/>
                     </div>
 
                     <div className="col-lg-6 mt-3 p-2">
@@ -58,6 +66,7 @@ class AddNewBook extends Component {
 
         )
     }
+
 }
 
 export default AddNewBook;
