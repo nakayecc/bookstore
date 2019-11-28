@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Book from './Book';
 import BooksList from "./BooksList";
 
 export class Home extends Component {

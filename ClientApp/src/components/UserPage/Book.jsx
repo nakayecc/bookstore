@@ -10,7 +10,7 @@ class Book extends Component{
         try {
             obrazek = require(`../img/${this.props.book.id}.jpg`);
         } catch (e) {
-            obrazek = require("../img/defaultBookImage.png");
+            obrazek = require("../../img/defaultBookImage.png");
         } 
         
 
