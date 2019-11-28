@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Bookstore.Models;
+using Bookstore.Models.DTO;
 
 namespace Bookstore.Controllers
 {
@@ -22,9 +23,20 @@ namespace Bookstore.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<SimpleBook>>> GetBooks()
         {
-            return await _context.Books.ToListAsync();
+            var dbBooks = _context.Books;
+
+            var books = from b in dbBooks
+                select new SimpleBook()
+                {
+                    Id = b.Id,
+                    Name = b.Name,
+                    Price = b.price
+
+                };
+
+            return await books.ToListAsync();
         }
 
         // GET: api/Books/5
